@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MapeiaSUS - Farmácias e Medicamentos</title>
+    
+    <!-- Fonte Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- CSS Leaflet -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    
+    <!-- FontAwesome 6 Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- CSS Personalizado -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="brand">
+            <div class="brand-logo">
+                <i class="fa-solid fa-notes-medical"></i>
+            </div>
+            <div class="brand-text">
+                <h1>Mapeia<span>SUS</span></h1>
+                <p>Rede de Dispensação de Medicamentos</p>
+            </div>
+        </div>
+        <div class="header-badge">
+            <i class="fa-solid fa-location-crosshairs"></i> Santa Maria - RS
+        </div>
+    </header>
+
+    <main class="main-container">
+        <!-- Painel Lateral -->
+        <aside class="sidebar">
+            <section class="search-box">
+                <label for="med-input">Medicamento Desejado</label>
+                <div class="input-wrapper">
+                    <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                    <input type="text" id="med-input" placeholder="Digite o nome do remédio..." autocomplete="off">
+                    <ul id="suggestions" class="suggestions-list"></ul>
+                </div>
+                
+                <div class="button-group">
+                    <button id="btn-search" class="btn btn-primary">
+                        <i class="fa-solid fa-magnifying-glass"></i> Buscar
+                    </button>
+                    <button id="btn-location" class="btn btn-secondary">
+                        <i class="fa-solid fa-crosshairs"></i> Minha Localização
+                    </button>
+                </div>
+            </section>
+
+            <!-- Lista de Resultados -->
+            <section class="results-section">
+                <div class="results-header">
+                    <h2>Farmácias Encontradas</h2>
+                    <span id="count" class="count-badge">0</span>
+                </div>
+                <div id="results-list" class="results-list">
+                    <div class="placeholder-state">
+                        <i class="fa-solid fa-pills"></i>
+                        <p>Digite um medicamento acima para localizar os pontos de retirada.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Histórico de Buscas -->
+            <section class="history-section">
+                <h3><i class="fa-solid fa-clock-rotate-left"></i> Pesquisas Recentes</h3>
+                <ul id="history-list"></ul>
+            </section>
+        </aside>
+
+        <!-- Container do Mapa -->
+        <section class="map-container">
+            <div id="map"></div>
+        </section>
+    </main>
+
+    <!-- JS Leaflet -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <!-- Script Principal -->
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>

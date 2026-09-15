@@ -1,0 +1,43 @@
+{
+    "FARMÁCIA MUNICIPAL CENTRAL":{
+        "endereco": "Rua André Marques, 760 - Centro",
+        "marker":[-29.684742585780054, -53.80453611349182],
+        "imagem": "static\\img\\farmacia_municipal.png"
+    },
+    "FARMÁCIA DISTRITAL CAMOBI":{
+        "endereco": "Rua Reinaldo Manoel Guidolin, 130 - Camobi",
+        "marker":[-29.699337940266933, -53.71804597116393 ],
+        "imagem": "static\\img\\farmacia_camobi.png"
+    },
+    "FARMÁCIA DISTRITAL TANCREDO NEVES":{
+        "endereco": "Avenida Paulo Lauda, 80 - Tancredo Neves",
+        "marker":[-29.701536258826696, -53.87479394654429 ],
+        "imagem": "static\\img\\farmacia_tancredo_neves.png"
+    },
+    "FARMÁCIA DISTRITAL FLORIANO ROCHA":{
+        "endereco": "R. Dr. Paulo da Silva e Souza, 1-149 - Juscelino Kubitschek",
+        "marker":[-29.69085874031203, -53.86259497467836],
+        "imagem": "static\\img\\farmacia_floriano_rocha.png"
+    },
+    "FARMÁCIA DISTRITAL KENNEDY":{
+        "endereco": "Rua Dario Leal da Cunha - Salgado Filho",
+        "marker":[-29.671547504526348, -53.82180676013915],
+        "imagem": "static\\img\\farmacia_kennedy.png"
+    },
+    "FARMÁCIA DISTRITAL SÃO FRANCISCO":{
+        "endereco": "  Rua Santa Maria, s/n°,  Diácono João Luiz Pozzobon",
+        "marker":[-29.716090766303054, -53.76063539363933],
+        "imagem": "static\\img\\farmacia_sao_francisco.png"
+    },
+    "FARMÁCIA DE MEDICAMENTOS ESPECIAIS":{
+        "endereco": "Av. Pres. Vargas, 1720 - Nossa Sra. de Fátima",
+        "marker":[-29.693929460342215, -53.81161858888551],
+        "imagem": "static\\img\\farmacia_especiais.png"
+    }
+    ,
+    "FARMÁCIA DISTRITAL ESTAÇÃO DOS VENTOS":{
+        "endereco": " R. Luís Castagna, 101 - Km Trêsw",
+        "marker":[-29.688769209000345, -53.77885116608285],
+        "imagem": "static\\img\\farmacia_estacao_dos_ventos.png"
+    }
+}

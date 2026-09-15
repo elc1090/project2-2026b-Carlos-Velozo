@@ -1,0 +1,472 @@
+:root {
+    --primary: #0284c7;
+    --primary-hover: #0369a1;
+    --primary-light: #f0f9ff;
+    --slate-900: #0f172a;
+    --slate-800: #1e293b;
+    --slate-700: #334155;
+    --slate-600: #475569;
+    --slate-500: #64748b;
+    --slate-300: #cbd5e1;
+    --slate-200: #e2e8f0;
+    --slate-100: #f1f5f9;
+    --slate-50: #f8fafc;
+    --emerald-600: #059669;
+    --emerald-50: #ecfdf5;
+    --radius: 8px;
+    --shadow-sm: 0 1px 3px rgba(0,0,0,0.06);
+    --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.08);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    background-color: var(--slate-100);
+    color: var(--slate-800);
+}
+
+/* Navbar */
+.navbar {
+    background: var(--slate-900);
+    color: white;
+    padding: 10px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: var(--shadow-md);
+    z-index: 10;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.brand-logo {
+    background: linear-gradient(135deg, #0284c7, #0369a1);
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.2rem;
+    box-shadow: 0 2px 8px rgba(2, 132, 199, 0.4);
+}
+
+.brand-text h1 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+}
+
+.brand-text h1 span {
+    color: #38bdf8;
+}
+
+.brand-text p {
+    font-size: 0.75rem;
+    color: var(--slate-400);
+}
+
+.header-badge {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--slate-800);
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    color: var(--slate-300);
+    border: 1px solid var(--slate-700);
+}
+
+.header-badge i {
+    color: #38bdf8;
+}
+
+/* Sidebar & Containers */
+.main-container {
+    display: flex;
+    flex: 1;
+    overflow: hidden;
+}
+
+.sidebar {
+    width: 390px;
+    background: #ffffff;
+    border-right: 1px solid var(--slate-200);
+    display: flex;
+    flex-direction: column;
+    padding: 18px;
+    gap: 16px;
+    overflow-y: auto;
+    z-index: 5;
+}
+
+/* Input e Busca */
+.search-box label {
+    font-weight: 600;
+    font-size: 0.82rem;
+    color: var(--slate-700);
+    margin-bottom: 6px;
+    display: block;
+}
+
+.input-wrapper {
+    position: relative;
+}
+
+.search-icon {
+    position: absolute;
+    left: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 0.9rem;
+    color: var(--slate-400);
+}
+
+.search-box input {
+    width: 100%;
+    padding: 10px 14px 10px 38px;
+    border: 1px solid var(--slate-200);
+    border-radius: var(--radius);
+    font-size: 0.88rem;
+    outline: none;
+    transition: all 0.2s;
+    background: var(--slate-50);
+}
+
+.search-box input:focus {
+    border-color: var(--primary);
+    background: #ffffff;
+    box-shadow: 0 0 0 3px rgba(2, 132, 199, 0.12);
+}
+
+.suggestions-list {
+    position: absolute;
+    top: calc(100% + 4px);
+    left: 0;
+    right: 0;
+    background: white;
+    border: 1px solid var(--slate-200);
+    border-radius: var(--radius);
+    list-style: none;
+    z-index: 1000;
+    max-height: 180px;
+    overflow-y: auto;
+    box-shadow: var(--shadow-md);
+}
+
+.suggestions-list li {
+    padding: 9px 14px;
+    cursor: pointer;
+    font-size: 0.85rem;
+    color: var(--slate-700);
+    border-bottom: 1px solid var(--slate-100);
+}
+
+.suggestions-list li:hover {
+    background: var(--primary-light);
+    color: var(--primary);
+}
+
+.button-group {
+    display: flex;
+    gap: 8px;
+    margin-top: 10px;
+}
+
+.btn {
+    padding: 9px 12px;
+    border: none;
+    border-radius: var(--radius);
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 0.82rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: all 0.2s;
+}
+
+.btn-primary {
+    background: var(--primary);
+    color: white;
+    flex: 1.2;
+}
+
+.btn-primary:hover {
+    background: var(--primary-hover);
+}
+
+.btn-secondary {
+    background: var(--slate-100);
+    color: var(--slate-700);
+    border: 1px solid var(--slate-200);
+    flex: 1;
+}
+
+.btn-secondary:hover {
+    background: var(--slate-200);
+}
+
+/* Lista de Resultados */
+.results-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.results-header h2 {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--slate-800);
+}
+
+.count-badge {
+    background: var(--slate-100);
+    color: var(--slate-600);
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 2px 8px;
+    border-radius: 12px;
+    border: 1px solid var(--slate-200);
+}
+
+.results-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.placeholder-state {
+    text-align: center;
+    padding: 30px 10px;
+    color: var(--slate-400);
+}
+
+.placeholder-state i {
+    font-size: 2rem;
+    margin-bottom: 8px;
+    display: block;
+}
+
+.placeholder-state p {
+    font-size: 0.82rem;
+}
+
+/* Cards das Farmácias */
+.pharmacy-card {
+    border: 1px solid var(--slate-200);
+    border-radius: var(--radius);
+    padding: 12px 14px;
+    background: #ffffff;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.pharmacy-card:hover {
+    border-color: var(--primary);
+    box-shadow: var(--shadow-sm);
+}
+
+.pharmacy-card.best-option {
+    border-left: 4px solid var(--emerald-600);
+    background: var(--slate-50);
+}
+
+.tag-nearest {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    background: var(--emerald-50);
+    color: var(--emerald-600);
+    font-size: 0.7rem;
+    font-weight: 700;
+    padding: 2px 6px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+    text-transform: uppercase;
+}
+
+.pharmacy-card h4 {
+    color: var(--slate-800);
+    font-weight: 600;
+    font-size: 0.88rem;
+    margin-bottom: 6px;
+}
+
+.pharmacy-card p {
+    font-size: 0.8rem;
+    color: var(--slate-500);
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    line-height: 1.3;
+}
+
+.pharmacy-card p i {
+    color: var(--slate-400);
+    margin-top: 2px;
+    font-size: 0.8rem;
+}
+
+.card-footer-info {
+    margin-top: 8px;
+}
+
+.badge-distance {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    background: var(--slate-100);
+    color: var(--slate-700);
+    font-weight: 600;
+    font-size: 0.75rem;
+    padding: 3px 8px;
+    border-radius: 6px;
+    border: 1px solid var(--slate-200);
+}
+
+.badge-distance i {
+    color: var(--primary);
+}
+
+/* Histórico de Buscas */
+.history-section {
+    border-top: 1px solid var(--slate-200);
+    padding-top: 14px;
+    margin-top: auto;
+}
+
+.history-section h3 {
+    font-size: 0.78rem;
+    font-weight: 700;
+    color: var(--slate-500);
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+
+.history-section ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.history-item {
+    font-size: 0.8rem;
+    color: var(--slate-700);
+    padding: 8px 10px;
+    background: var(--slate-50);
+    border: 1px solid var(--slate-200);
+    border-radius: 6px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.15s;
+}
+
+.history-item:hover {
+    background: var(--primary-light);
+    border-color: var(--slate-300);
+}
+
+.history-term {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 500;
+}
+
+.history-term i {
+    color: var(--slate-400);
+    font-size: 0.75rem;
+}
+
+.history-time {
+    color: var(--slate-400);
+    font-size: 0.72rem;
+    font-weight: 400;
+}
+
+/* Mapa */
+.map-container {
+    flex: 1;
+    height: 100%;
+}
+
+#map {
+    width: 100%;
+    height: 100%;
+}
+
+.custom-popup h4 {
+    font-size: 0.88rem;
+    color: var(--slate-800);
+    font-weight: 700;
+}
+
+.custom-popup p {
+    font-size: 0.78rem;
+    color: var(--slate-500);
+    margin-top: 2px;
+}
+
+/* Espaço para Imagem no Popup do Mapa */
+.custom-popup {
+    width: 210px;
+    padding: 2px;
+}
+
+.popup-image-container {
+    width: 100%;
+    height: 105px;
+    border-radius: 6px;
+    overflow: hidden;
+    background: var(--slate-100);
+    border: 1px dashed var(--slate-300);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 8px;
+}
+
+.popup-image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.popup-image-placeholder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    color: var(--slate-400);
+    font-size: 0.72rem;
+    font-weight: 500;
+}
+
+.popup-image-placeholder i {
+    font-size: 1.3rem;
+}
