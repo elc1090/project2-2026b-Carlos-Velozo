@@ -1,0 +1,26 @@
+# Byte-compiled / Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Ambientes Virtuais
+venv/
+env/
+.venv/
+
+# Banco de dados local (gerado automaticamente via init_db.py no build)
+*.db
+*.sqlite
+*.sqlite3
+
+# Configurações de IDEs e Editores
+.vscode/
+.idea/
+*.swp
+
+# Arquivos do Sistema Operacional
+.DS_Store
+Thumbs.db
+
+# Variáveis de ambiente e segredos
+.env
